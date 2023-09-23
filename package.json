@@ -1,0 +1,25 @@
+{
+  "name": "stepci-demo",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "test:e2e": "stepci run workflow.yml",
+    "start": "tsx index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "stepci": "^2.6.8",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.4.0",
+    "@fastify/swagger": "^8.10.1",
+    "@fastify/swagger-ui": "^1.9.3",
+    "fastify": "^4.23.2"
+  }
+}
