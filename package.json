@@ -10,7 +10,8 @@
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
     "test:generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
     "start": "tsx index.ts",
-    "start:prod": "node dist/index.js"
+    "start:prod": "node dist/index.js",
+    "vercel-build": "tsup index.ts --clean --format esm --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir api"
   },
   "dependencies": {
     "@fastify/cors": "^8.4.0",
