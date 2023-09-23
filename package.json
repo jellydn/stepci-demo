@@ -7,6 +7,7 @@
     "ci": "run-p --race test:*",
     "test:server": "NODE_DEVELOPMENT=test tsx index.ts",
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
+    "test:generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
     "start": "tsx index.ts"
   },
   "dependencies": {

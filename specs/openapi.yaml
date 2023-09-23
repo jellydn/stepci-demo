@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Test swagger
+  description: Testing the Fastify swagger API
+  version: 0.1.0
+externalDocs:
+  description: Find more info here
+  url: https://swagger.io
+servers:
+  - url: http://localhost:3000
+paths:
+  /:
+    get:
+      responses:
+        200:
+          description: Default Response
+          content: {}
+  /hello:
+    get:
+      responses:
+        200:
+          description: Successful response with a JSON object
+          content:
+            application/json:
+              schema:
+                type: string
+                description: Successful response with a JSON object
+  /ping:
+    get:
+      responses:
+        200:
+          description: Default Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: string
+components: {}

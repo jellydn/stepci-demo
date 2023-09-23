@@ -1,0 +1,35 @@
+version: "1.0"
+name: Test swagger
+config:
+  http:
+    baseURL: http://localhost:3000
+tests:
+  default:
+    name: Default
+    steps:
+      - http:
+          url: /
+          method: GET
+          schema:
+            type: object
+            properties:
+              ok: bool
+      - http:
+          url: /hello
+          method: GET
+          check:
+            status: 200
+            schema:
+              type: object
+              description: Successful response with a JSON object
+      - http:
+          url: /ping
+          method: GET
+          check:
+            status: 200
+            schema:
+              type: object
+              properties:
+                pong:
+                  type: string
+components: {}

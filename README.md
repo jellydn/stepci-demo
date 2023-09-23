@@ -1,12 +1,11 @@
-<h1 align="center">StepCI Demo for Fastify API Testing 👋</h1>
+<h1 align="center">StepCI Demo for E2E Testing 👋</h1>
 
 ## Overview
 
-This repository provides a guide to set up continuous integration for a [Fastify API](https://fastify.dev/docs/latest/Reference/TypeScript/) using [Step CI](https://stepci.com/#get-started).
+This repository provides a guide to set up continuous integration for a [Fastify](https://fastify.dev/docs/latest/Reference/TypeScript/) using [Step CI](https://stepci.com/#get-started).
 
 ## Prerequisites
 
-- [Node.js LTS](https://nodejs.org/en/)
 - [Bun](https://bun.sh/)
 
 ## Usage

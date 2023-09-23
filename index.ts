@@ -20,14 +20,14 @@ await server.register(swagger, {
   swagger: {
     info: {
       title: "Test swagger",
-      description: "Testing the Fastify swagger API",
+      description: "This is the documentation of the API",
       version: "0.1.0",
     },
     externalDocs: {
       url: "https://swagger.io",
       description: "Find more info here",
     },
-    host: "localhost",
+    host: "localhost:3000",
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
@@ -42,6 +42,12 @@ await server.register(swaggerUI, {
   },
   staticCSP: true,
 });
+
+// Health check
+server.get("/", async (_request, _reply) => {
+  return { ok: true };
+});
+
 
 // Declare a route
 server.get<{
@@ -73,10 +79,6 @@ server.get(
     return { pong: "it worked!" };
   }
 );
-
-server.get("/", async (_request, _reply) => {
-  return { ok: true };
-});
 
 const start = async () => {
   try {
