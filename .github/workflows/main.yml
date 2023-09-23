@@ -8,14 +8,6 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  api_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Step CI Action
-        uses: stepci/stepci@main
-        with:
-          workflow: "workflow.yml"
   e2e_test:
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -35,4 +27,4 @@ jobs:
       - id: test
         name: E2E Test
         run: |
-          bun run test:e2e
+          bun run ci
