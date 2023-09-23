@@ -80,7 +80,7 @@ server.get(
   }
 );
 
-const start = async () => {
+async function startServer() {
   try {
     await server.listen({ port: 3000 });
 
@@ -96,4 +96,7 @@ const start = async () => {
   }
 };
 
-start();
+if (process.env.DEPLOYMENT_ENV !== 'vercel') startServer();
+
+export default startServer;
+
