@@ -1,0 +1,38 @@
+name: Run StepCI with Bun
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  api_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Step CI Action
+        uses: stepci/stepci@main
+        with:
+          workflow: "workflow.yml"
+  e2e_test:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v3
+      - id: setup-bun
+        name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - id: install-bun
+        name: Bun Install
+        run: |
+          bun install
+      - id: test
+        name: E2E Test
+        run: |
+          bun run test:e2e
