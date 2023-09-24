@@ -13,7 +13,7 @@
       "generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
       "start": "bun app.ts",
       "start:prod": "node dist/app.js",
-      "test": "bun test"
+      "test": "bun test tests/app.test.ts"
     },
   "dependencies": {
     "@fastify/cors": "8.4.0",
