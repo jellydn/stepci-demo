@@ -10,6 +10,8 @@ import cors from "@fastify/cors";
 import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 
+const SERVER_PORT = Number(process.env.PORT ?? 3000);
+
 const server: FastifyInstance = fastify({
   logger: process.env.NODE_DEVELOPMENT !== "test",
 });
@@ -28,7 +30,7 @@ void server.register(swagger, {
       url: "https://swagger.io",
       description: "Find more info here",
     },
-    host: "localhost:3000",
+    host: "localhost:" + SERVER_PORT,
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
@@ -80,7 +82,7 @@ server.get(
 
 async function startServer() {
   try {
-    await server.listen({ port: 3000 });
+    await server.listen({ port: SERVER_PORT });
 
     const address = server.server.address();
     const port = typeof address === "string" ? address : address?.port;
