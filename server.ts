@@ -17,13 +17,14 @@ const server: FastifyInstance = fastify({
   logger: process.env.NODE_DEVELOPMENT !== "test",
 });
 
-// Register plugins
+// Register CORS Plugin
 void server.register(cors);
 
+// Register Swagger Plugin
 void server.register(swagger, {
   swagger: {
     info: {
-      title: "Test swagger",
+      title: "Simple API Documentation",
       description: "This is the documentation of the API",
       version: "0.1.0",
     },
@@ -38,6 +39,7 @@ void server.register(swagger, {
   },
 });
 
+// Register Swagger UI Plugin
 void server.register(swaggerUI, {
   routePrefix: "/documentation",
   uiConfig: {
@@ -47,6 +49,7 @@ void server.register(swaggerUI, {
   staticCSP: true,
 });
 
+// Root Route
 server.get("/", async (_request, _reply) => ({ status: "ok" }));
 
 // Health check
