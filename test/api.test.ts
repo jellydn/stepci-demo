@@ -1,6 +1,7 @@
 import fastify from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { test, expect, mock } from "bun:test";
+import app from '../src/app';
 const random = mock(() => Math.random());
 
 test("random", async () => {
@@ -21,12 +22,12 @@ describe('Fastify API tests', () => {
     server.close();
   });
 
-  import app from '../src/app';
-  
   describe('Fastify API tests', () => {
     let server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse>;
-  
+    
     beforeEach(() => {
+      server = app;
+    });
       server = app;
     });
   
