@@ -11,6 +11,7 @@ import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 
 const SERVER_PORT = Number(process.env.PORT ?? 3000);
+const SERVER_HOST = process.env.SERVER_HOST ?? "localhost";
 
 const server: FastifyInstance = fastify({
   logger: process.env.NODE_DEVELOPMENT !== "test",
@@ -30,7 +31,7 @@ void server.register(swagger, {
       url: "https://swagger.io",
       description: "Find more info here",
     },
-    host: "localhost:" + SERVER_PORT,
+    host: `${SERVER_HOST}:${SERVER_PORT}`,
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
@@ -45,6 +46,8 @@ void server.register(swaggerUI, {
   },
   staticCSP: true,
 });
+
+server.get("/", async (_request, _reply) => ({ status: "ok" }));
 
 // Health check
 server.get("/api", async (_request, _reply) => ({ ok: true }));
@@ -82,7 +85,10 @@ server.get(
 
 async function startServer() {
   try {
-    await server.listen({ port: SERVER_PORT });
+    await server.listen({
+      port: SERVER_PORT,
+      host: SERVER_HOST,
+    });
 
     const address = server.server.address();
     const port = typeof address === "string" ? address : address?.port;

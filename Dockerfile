@@ -15,6 +15,7 @@ COPY . .
 
 # Set environment to production
 ENV NODE_ENV production
+ENV SERVER_HOST 0.0.0.0
 
 # Expose port 8000
 EXPOSE 8000
