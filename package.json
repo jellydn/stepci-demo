@@ -11,7 +11,7 @@
     "test:server": "NODE_DEVELOPMENT=test tsx app.ts",
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
     "generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
-    "start": "tsx app.ts",
+    "start": "bun app.ts",
     "start:prod": "node dist/app.js"
   },
   "dependencies": {
