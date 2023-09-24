@@ -16,5 +16,8 @@ COPY . .
 # Set environment to production
 ENV NODE_ENV production
 
+# Expose port 8000
+EXPOSE 8000
+
 # Command to run the application
 CMD [ "bun", "start:prod" ]
