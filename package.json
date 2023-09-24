@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun run --watch app.ts",
     "build": "tsup app.ts --clean --format esm,cjs",
-    "ci": "npx run-p --race test:*",
+    "ci": "npm run test:* --parallel",
     "format": "prettier --write .",
     "test": "bun test"
   },
