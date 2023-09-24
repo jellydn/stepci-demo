@@ -16,6 +16,37 @@ describe('Fastify API tests', () => {
     server.close();
   });
 
+  test('GET /api', async () => {
+    const response = await server.inject({
+      method: 'GET',
+      url: '/api',
+    });
+
+    expect(response.statusCode).toBe(200);
+  });
+
+  test('GET /api/hello', async () => {
+    const response = await server.inject({
+      method: 'GET',
+      url: '/api/hello',
+    });
+
+    expect(response.statusCode).toBe(200);
+  });
+
+  test('GET /api/ping', async () => {
+    const response = await server.inject({
+      method: 'GET',
+      url: '/api/ping',
+    });
+
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toEqual({ pong: 'it works!' });
+  });
+
+  // Add more tests as needed
+});
+
   describe('Fastify API tests', () => {
     let server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse>;
     
