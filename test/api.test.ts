@@ -28,8 +28,6 @@ describe('Fastify API tests', () => {
     beforeEach(() => {
       server = app;
     });
-      server = app;
-    });
   
     afterEach(() => {
       server.close();
