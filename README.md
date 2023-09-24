@@ -6,6 +6,8 @@
 
 Get up and running with a [Fastify](https://fastify.dev/docs/latest/Reference/TypeScript/) application, integrated with continuous testing via [Step CI](https://stepci.com/#get-started).
 
+[![IT Man - A Comprehensive Guide to Fastify, Bun, and CI with StepCI [Vietnamese]](https://i.ytimg.com/vi/pgofbfmxMto/hqdefault.jpg)](https://www.youtube.com/watch?v=pgofbfmxMto)
+
 ## Prerequisites
 
 - [Bun](https://bun.sh/) installed on your system.
