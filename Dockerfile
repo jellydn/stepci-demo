@@ -21,4 +21,4 @@ ENV SERVER_HOST 0.0.0.0
 EXPOSE 8000
 
 # Command to run the application
-CMD [ "bun", "start:prod" ]
+CMD [ "bun", "run", "start" ]
