@@ -7,6 +7,7 @@ import fastify, {
 } from "fastify";
 
 import cors from "@fastify/cors";
+import helmet from "@fastify/helmet";
 import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 
@@ -17,6 +18,8 @@ const server: FastifyInstance = fastify({
   logger: process.env.NODE_DEVELOPMENT !== "test",
 });
 
+// Register helmet plugin
+await server.register(helmet);
 // Register CORS Plugin
 await server.register(cors);
 
@@ -33,7 +36,7 @@ await server.register(swagger, {
       description: "Find more info here",
     },
     host: process.env.SERVER_URL ?? `${SERVER_HOST}:${SERVER_PORT}`,
-    schemes: ["http", "https"],
+    schemes: SERVER_HOST.includes("localhost") ? ["http"] : ["https"],
     consumes: ["application/json"],
     produces: ["application/json"],
   },
@@ -53,7 +56,7 @@ await server.register(swaggerUI, {
 server.get("/", async (_request, _reply) => ({ status: "ok" }));
 
 // Health check
-server.get("/api", async (_request, _reply) => ({ ok: true }));
+server.get("/health-check", async (_request, _reply) => ({ ok: true }));
 
 // Declare a route
 server.get<{

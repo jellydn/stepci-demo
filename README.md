@@ -9,6 +9,7 @@ Get up and running with a [Fastify](https://fastify.dev/docs/latest/Reference/Ty
 ## Prerequisites
 
 - [Bun](https://bun.sh/) installed on your system.
+- [antfu/ni](https://github.com/antfu/ni) 💡 Use the right package manager.
 
 ## Getting Started
 
