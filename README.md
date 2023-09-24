@@ -1,5 +1,7 @@
 <h1 align="center">StepCI Demo for E2E Testing 👋</h1>
 
+![stepci-demo](https://socialify.git.ci/jellydn/stepci-demo/image?description=1&issues=1&language=1&logo=https%3A%2F%2Fstepci.com%2Flogo.svg&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Auto)
+
 ## Overview
 
 This repository provides a guide to set up continuous integration for a [Fastify](https://fastify.dev/docs/latest/Reference/TypeScript/) using [Step CI](https://stepci.com/#get-started).
