@@ -26,7 +26,6 @@
     "@trivago/prettier-plugin-sort-imports": "4.2.0",
     "@typescript-eslint/eslint-plugin": "6.7.2",
     "@typescript-eslint/parser": "6.7.2",
-    "@types/jest": "^27.0.2",
     "@types/fastify": "^3.0.0",
     "bun-types": "latest",
     "eslint": "8.50.0",
