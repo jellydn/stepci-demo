@@ -2,7 +2,7 @@ import fastify from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { test, expect, mock } from "bun:test";
 import app from '../src/app';
-const random = mock(() => Math.random());
+const random = mock(Math.random);
 
 test("random", async () => {
   const val = random();
