@@ -24,3 +24,16 @@ tests:
             jsonpath:
               $.hello:
                 - eq: itman
+  hello_world:
+    testdata:
+      file: data.csv
+    steps:
+      - name: Greeter
+        http:
+          url: http://${{env.host}}/hello
+          method: GET
+          check:
+            status: 200
+            jsonpath:
+              $.hello:
+                - eq: world
