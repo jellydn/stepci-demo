@@ -31,6 +31,10 @@ jobs:
         name: Verify Bun
         run: |
           bun --version
+      - id: bun-install
+        name: Bun Install
+        run: |
+          bun install
       - id: bun-test
         name: Bun Test
         run: |
