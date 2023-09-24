@@ -18,10 +18,10 @@ const server: FastifyInstance = fastify({
 });
 
 // Register CORS Plugin
-void server.register(cors);
+await server.register(cors);
 
 // Register Swagger Plugin
-void server.register(swagger, {
+await server.register(swagger, {
   swagger: {
     info: {
       title: "Simple API Documentation",
@@ -40,7 +40,7 @@ void server.register(swagger, {
 });
 
 // Register Swagger UI Plugin
-void server.register(swaggerUI, {
+await server.register(swaggerUI, {
   routePrefix: "/documentation",
   uiConfig: {
     docExpansion: "full",
