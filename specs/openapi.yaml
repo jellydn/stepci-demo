@@ -9,13 +9,13 @@ externalDocs:
 servers:
   - url: http://localhost:3000
 paths:
-  /:
+  /api:
     get:
       responses:
         200:
           description: Default Response
           content: {}
-  /hello:
+  /api/hello:
     get:
       responses:
         200:
@@ -25,7 +25,7 @@ paths:
               schema:
                 type: string
                 description: Successful response with a JSON object
-  /ping:
+  /api/ping:
     get:
       responses:
         200:

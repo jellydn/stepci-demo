@@ -1,17 +1,18 @@
 {
   "name": "stepci-demo",
   "type": "module",
-  "module": "index.ts",
+  "module": "app.ts",
   "scripts": {
-    "dev": "tsx watch index.ts",
-    "build": "tsup index.ts --clean --format esm",
+    "dev": "tsx watch app.ts",
+    "build": "tsup app.ts --clean --format esm,cjs",
     "ci": "run-p --race test:*",
-    "test:server": "NODE_DEVELOPMENT=test tsx index.ts",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test:server": "NODE_DEVELOPMENT=test tsx app.ts",
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
     "generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
-    "start": "tsx index.ts",
-    "start:prod": "node dist/index.js",
-    "vercel-build": "tsup index.ts --clean --format esm --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir api"
+    "start": "tsx app.ts",
+    "start:prod": "node dist/app.js"
   },
   "dependencies": {
     "@fastify/cors": "8.4.0",
@@ -20,11 +21,18 @@
     "fastify": "4.23.2"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
     "bun-types": "latest",
+    "eslint": "^8.50.0",
+    "eslint-config-productsway": "^1.3.0",
     "npm-run-all": "4.1.5",
+    "prettier": "^3.0.3",
     "stepci": "2.6.8",
     "tsup": "7.2.0",
     "tsx": "3.12.10",
+    "typescript": "^5.2.2",
     "wait-on": "7.0.1"
   },
   "peerDependencies": {

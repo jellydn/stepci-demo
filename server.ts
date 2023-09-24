@@ -1,22 +1,23 @@
 // Import the framework and instantiate it
-import Fastify, {
-  FastifyInstance,
-  FastifyReply,
-  FastifyRequest,
-  RouteShorthandOptions,
+import fastify, {
+  type FastifyInstance,
+  type FastifyReply,
+  type FastifyRequest,
+  type RouteShorthandOptions,
 } from "fastify";
+
 import cors from "@fastify/cors";
 import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 
-const server: FastifyInstance = Fastify({
-  logger: process.env.NODE_DEVELOPMENT === "test" ? false : true,
+const server: FastifyInstance = fastify({
+  logger: process.env.NODE_DEVELOPMENT !== "test",
 });
 
 // Register plugins
-await server.register(cors);
+void server.register(cors);
 
-await server.register(swagger, {
+void server.register(swagger, {
   swagger: {
     info: {
       title: "Test swagger",
@@ -34,7 +35,7 @@ await server.register(swagger, {
   },
 });
 
-await server.register(swaggerUI, {
+void server.register(swaggerUI, {
   routePrefix: "/documentation",
   uiConfig: {
     docExpansion: "full",
@@ -44,16 +45,13 @@ await server.register(swaggerUI, {
 });
 
 // Health check
-server.get("/", async (_request, _reply) => {
-  return { ok: true };
-});
-
+server.get("/api", async (_request, _reply) => ({ ok: true }));
 
 // Declare a route
 server.get<{
   Querystring: { name: string };
-}>("/hello", async function handler(request) {
-  const name = request.query.name;
+}>("/api/hello", async (request) => {
+  const { name } = request.query;
   return { hello: name ?? "world" };
 });
 
@@ -73,11 +71,11 @@ const opts: RouteShorthandOptions = {
 };
 
 server.get(
-  "/ping",
+  "/api/ping",
   opts,
-  async (_request: FastifyRequest, _reply: FastifyReply) => {
-    return { pong: "it worked!" };
-  }
+  async (_request: FastifyRequest, _reply: FastifyReply) => ({
+    pong: "it worked!",
+  }),
 );
 
 async function startServer() {
@@ -94,9 +92,6 @@ async function startServer() {
     server.log.error(err);
     process.exit(1);
   }
-};
-
-if (process.env.DEPLOYMENT_ENV !== 'vercel') startServer();
+}
 
 export default startServer;
-

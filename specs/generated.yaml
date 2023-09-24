@@ -8,14 +8,14 @@ tests:
     name: Default
     steps:
       - http:
-          url: /
+          url: /api
           method: GET
           schema:
             type: object
             properties:
               ok: bool
       - http:
-          url: /hello
+          url: /api/hello
           method: GET
           check:
             status: 200
@@ -23,7 +23,7 @@ tests:
               type: object
               description: Successful response with a JSON object
       - http:
-          url: /ping
+          url: /api/ping
           method: GET
           check:
             status: 200
