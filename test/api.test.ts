@@ -1,6 +1,14 @@
 import fastify from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
-import * as jest from 'jest';
+import { test, expect, mock } from "bun:test";
+const random = mock(() => Math.random());
+
+test("random", async () => {
+  const val = random();
+  expect(val).toBeGreaterThan(0);
+  expect(random).toHaveBeenCalled();
+  expect(random).toHaveBeenCalledTimes(1);
+});
 
 describe('Fastify API tests', () => {
   let server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse>;
