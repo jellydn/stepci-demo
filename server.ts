@@ -32,7 +32,7 @@ await server.register(swagger, {
       url: "https://swagger.io",
       description: "Find more info here",
     },
-    host: `${SERVER_HOST}:${SERVER_PORT}`,
+    host: process.env.SERVER_URL ?? `${SERVER_HOST}:${SERVER_PORT}`,
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
