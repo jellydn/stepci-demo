@@ -77,6 +77,7 @@ Easily deploy your Fastify application on the serverless platform [Koyeb](https:
 - [Step CI Documentation](https://docs.stepci.com/guides/concepts.html)
 - [Fastify TypeScript Documentation](https://fastify.dev/docs/latest/Reference/TypeScript/)
 - [Bun 1.0 Release Blog](https://bun.sh/blog/bun-v1.0)
+- [How to run GitHub Action locally with act.](https://github.com/jellydn/github-action-locally)
 
 ## Author
 
@@ -93,4 +94,3 @@ If this guide has been helpful, please give it a ⭐️.
 [![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
 [![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
 [![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
-
