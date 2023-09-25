@@ -14,7 +14,7 @@ import swaggerUI from "@fastify/swagger-ui";
 const SERVER_PORT = Number(process.env.PORT ?? 3000);
 const SERVER_HOST = process.env.SERVER_HOST ?? "localhost";
 
-export const server: FastifyInstance = fastify({
+export default fastify({
   logger: process.env.NODE_DEVELOPMENT !== "test",
 });
 
