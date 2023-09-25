@@ -1,6 +1,7 @@
 import { fastify } from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
-import app from '../app';
+// In app.ts file, add the following line at the end:
+export default app;
 
 let server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse>;
 
