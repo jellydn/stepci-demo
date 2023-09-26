@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import fastify from 'fastify';
 import assert from 'assert';
 
-const app = fastify();
+import server from '../server';
 
 // Test for GET /api
 app.inject({
