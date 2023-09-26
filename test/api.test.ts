@@ -3,8 +3,6 @@ import assert from 'assert';
 
 const app = fastify();
 
-const app = fastify();
-
 // Test for GET /api
 app.inject({
   method: 'GET',
@@ -35,6 +33,6 @@ app.inject({
   assert.strictEqual(response.headers['content-type'], 'application/json; charset=utf-8');
 });
 
-app.close();
+app.close().catch((err) => console.error(err));
 
-app.close();
+app.close().catch((err) => console.error(err));
