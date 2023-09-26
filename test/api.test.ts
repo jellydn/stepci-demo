@@ -24,7 +24,7 @@ app.inject({
 });
 
 // Test for GET /api/ping
-app.inject({
+server.inject({
   method: 'GET',
   url: '/api/ping'
 }, (err, response) => {
@@ -33,6 +33,5 @@ app.inject({
   assert.strictEqual(response.headers['content-type'], 'application/json; charset=utf-8');
 });
 
-app.close().catch((err) => console.error(err));
-
-app.close().catch((err) => console.error(err));
+// The server should not be closed yet, as per user's comment
+// server.close().catch((err) => console.error(err));
