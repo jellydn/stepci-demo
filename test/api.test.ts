@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 import fastify from 'fastify';
 import assert from 'assert';
 
