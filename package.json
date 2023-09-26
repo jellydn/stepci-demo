@@ -13,7 +13,8 @@
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
     "generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
     "start": "bun app.ts",
-    "start:prod": "node dist/app.js"
+    "start:prod": "node dist/app.js",
+    "test": "bun test"
   },
   "dependencies": {
     "@fastify/cors": "8.4.0",
