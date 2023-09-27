@@ -4,10 +4,22 @@ import assert from 'assert';
 // TODO: Import server when it's needed
 // import { server } from '../server';
 
+import { server } from '../server';
+
 // Test for GET /api
-app.inject({
+server.inject({
   method: 'GET',
   url: '/api'
+}, (err, response) => {
+  if (err) { console.error(err); assert.fail(err); }
+  assert.strictEqual(response.statusCode, 200);
+  assert.strictEqual(response.headers['content-type'], 'application/json; charset=utf-8');
+});
+
+// Test for GET /api/hello
+server.inject({
+  method: 'GET',
+  url: '/api/hello'
 }, (err, response) => {
   if (err) { console.error(err); assert.fail(err); }
   assert.strictEqual(response.statusCode, 200);
