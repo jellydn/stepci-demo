@@ -20,4 +20,13 @@ describe("API", () => {
     expect(response.statusCode).toBe(200);
     expect(response.json()).toEqual({ status: "ok" });
   });
+
+  test("should return 404", async () => {
+    const response = await server.inject({
+      method: "GET",
+      url: "/not-found",
+    });
+
+    expect(response.statusCode).toBe(404);
+  });
 });
