@@ -11,20 +11,39 @@ afterAll(async () => {
 });
 
 describe("API", () => {
-  test("should return 200", async () => {
+  test("/api should return 200", async () => {
     const response = await server.inject({
       method: "GET",
-      url: "/",
+      url: "/api",
     });
 
     expect(response.statusCode).toBe(200);
-    expect(response.json()).toEqual({ status: "ok" });
   });
 
-  test("should return 404", async () => {
+  test("/api/hello should return 200 and a string", async () => {
     const response = await server.inject({
       method: "GET",
-      url: "/not-found",
+      url: "/api/hello",
+    });
+
+    expect(response.statusCode).toBe(200);
+    expect(typeof response.json()).toBe('string');
+  });
+
+  test("/api/ping should return 200 and an object with pong property", async () => {
+    const response = await server.inject({
+      method: "GET",
+      url: "/api/ping",
+    });
+
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toHaveProperty('pong');
+  });
+
+  test("should return 404 for invalid URL", async () => {
+    const response = await server.inject({
+      method: "GET",
+      url: "/api/invalid",
     });
 
     expect(response.statusCode).toBe(404);
