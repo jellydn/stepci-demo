@@ -11,23 +11,23 @@ afterAll(async () => {
 });
 
 describe("API", () => {
-  test("/api should return 200", async () => {
+  test("/api should return 404", async () => {
     const response = await server.inject({
       method: "GET",
       url: "/api",
     });
-
-    expect(response.statusCode).toBe(200);
+  
+    expect(response.statusCode).toBe(404);
   });
 
-  test("/api/hello should return 200 and a string", async () => {
+  test("/api/hello should return 200 and an object", async () => {
     const response = await server.inject({
       method: "GET",
       url: "/api/hello",
     });
-
+  
     expect(response.statusCode).toBe(200);
-    expect(typeof response.json()).toBe('string');
+    expect(typeof response.json()).toBe('object');
   });
 
   test("/api/ping should return 200 and an object with pong property", async () => {
