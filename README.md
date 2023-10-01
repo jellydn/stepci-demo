@@ -78,6 +78,8 @@ Easily deploy your Fastify application on the serverless platform [Koyeb](https:
 - [Fastify TypeScript Documentation](https://fastify.dev/docs/latest/Reference/TypeScript/)
 - [Bun 1.0 Release Blog](https://bun.sh/blog/bun-v1.0)
 - [How to run GitHub Action locally with act.](https://github.com/jellydn/github-action-locally)
+- [![IT Man - Running GitHub Actions Locally: A Complete Guide with act [Vietnamese]](https://i.ytimg.com/vi/nklNK13G7u4/hqdefault.jpg)](https://www.youtube.com/watch?v=nklNK13G7u4)
+- [![IT Man - Understanding and Preventing Floating Promises in JavaScript | Tutorial [Vietnamese]](https://i.ytimg.com/vi/hF3yl4iOlwA/hqdefault.jpg)](https://www.youtube.com/watch?v=hF3yl4iOlwA)
 
 ## Author
 
