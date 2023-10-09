@@ -41,7 +41,7 @@
     "stepci": "2.6.8",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
-    "unplugin-swc": "1.4.2",
+    "unplugin-swc": "1.4.3",
     "vite": "4.4.11",
     "vitest": "0.34.6",
     "wait-on": "7.0.1"
