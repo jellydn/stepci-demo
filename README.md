@@ -49,6 +49,7 @@ npx stepci run workflow.yml
 ```bash
 docker run \
        -v "$(pwd)"/tests:/tests \
+       -v "$(pwd)"/.npmrc:/root/.npmrc \
        ghcr.io/stepci/stepci \
        tests/workflow.yml
 ```
