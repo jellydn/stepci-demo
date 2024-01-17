@@ -18,7 +18,7 @@
     "test": "bunx vitest run",
     "test:ui": "bunx vitest run --ui",
     "test:watch": "bunx vitest run --watch",
-    "test:coverage": "bunx vitest run --coverage"
+    "test:coverage": "bunx vitest@1.2.0 run --coverage"
   },
   "dependencies": {
     "@fastify/cors": "8.5.0",
