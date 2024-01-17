@@ -12,7 +12,7 @@
     "test:server": "NODE_DEVELOPMENT=test bun run app.ts",
     "test:e2e": "wait-on -l tcp:3000 && stepci run workflow.yml",
     "generate": "stepci generate ./specs/openapi.yaml ./specs/generated.yaml",
-    "preinstall": "npm install ajv@^8.6.0",
+    "preinstall": "npm install ajv@^8.6.0 --legacy-peer-deps",
     "start": "bun app.ts",
     "start:prod": "node dist/app.js",
     "test": "bunx vitest run",
