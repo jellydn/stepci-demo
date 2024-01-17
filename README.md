@@ -6,7 +6,7 @@
 
 Get up and running with a [Fastify](https://fastify.dev/docs/latest/Reference/TypeScript/) application, integrated with continuous testing via [Step CI](https://stepci.com/#get-started).
 
-[![IT Man - A Comprehensive Guide to Fastify, Bun, and CI with StepCI [Vietnamese]](https://i.ytimg.com/vi/pgofbfmxMto/hqdefault.jpg)](https://www.youtube.com/watch?v=pgofbfmxMto)
+[![IT Man - A Comprehensive Guide to Fastify, Docker, and CI with StepCI [Vietnamese]](https://i.ytimg.com/vi/pgofbfmxMto/hqdefault.jpg)](https://www.youtube.com/watch?v=pgofbfmxMto)
 
 ## Prerequisites
 
@@ -24,11 +24,13 @@ Get up and running with a [Fastify](https://fastify.dev/docs/latest/Reference/Ty
 2. **Install Dependencies**
 
    ```bash
-   bun install
+   npm install
+bun install
    ```
 
 3. **Run Tests Locally**
    ```bash
+   npm run start
    bun run start
    bun run test:e2e
    ```
@@ -49,6 +51,8 @@ npx stepci run workflow.yml
 ```bash
 docker run \
        -v "$(pwd)"/tests:/tests \
+       -w /app \
+       -e CI=true \
        ghcr.io/stepci/stepci \
        tests/workflow.yml
 ```
@@ -79,7 +83,7 @@ Easily deploy your Fastify application on the serverless platform [Koyeb](https:
 - [Bun 1.0 Release Blog](https://bun.sh/blog/bun-v1.0)
 - [How to run GitHub Action locally with act.](https://github.com/jellydn/github-action-locally)
 - [![IT Man - Running GitHub Actions Locally: A Complete Guide with act [Vietnamese]](https://i.ytimg.com/vi/nklNK13G7u4/hqdefault.jpg)](https://www.youtube.com/watch?v=nklNK13G7u4)
-- [![IT Man - Understanding and Preventing Floating Promises in JavaScript | Tutorial [Vietnamese]](https://i.ytimg.com/vi/hF3yl4iOlwA/hqdefault.jpg)](https://www.youtube.com/watch?v=hF3yl4iOlwA)
+- [![IT Man - Understanding and Preventing Floating Promises in JavaScript | Tutorial | Tutorial [Vietnamese]](https://i.ytimg.com/vi/hF3yl4iOlwA/hqdefault.jpg)](https://www.youtube.com/watch?v=hF3yl4iOlwA)
 
 ## Author
 
@@ -92,6 +96,10 @@ Easily deploy your Fastify application on the serverless platform [Koyeb](https:
 ## Show your support
 
 If this guide has been helpful, please give it a ⭐️.
+
+[![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
+[![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
+[![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
 
 [![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
 [![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)

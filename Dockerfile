@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json bun.lockb ./
 
 # Install dependencies using bun
-RUN bun install
+RUN npm install -g bun && npm install
 
 # Copy the rest of the source code
 COPY . .
