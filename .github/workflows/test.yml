@@ -16,7 +16,7 @@ jobs:
                 node-version: 18.19.0
 
       - name: Install bun
-        run: npm install --global bun
+        run: bun install --global bun
 
       - name: Install dependencies
         run: bun install
