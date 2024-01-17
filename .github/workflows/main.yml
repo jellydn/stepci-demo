@@ -23,7 +23,7 @@ jobs:
       - id: install-bun
         name: Bun Install
         run: |
-          bun install
+          bun install --legacy-peer-deps
       - id: test
         name: E2E Test
         run: |
