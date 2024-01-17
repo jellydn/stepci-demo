@@ -20,6 +20,8 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
+      - name: Create .npmrc file
+        run: echo "registry=https://registry.npmjs.org/" > .npmrc
       - id: install-bun
         name: Bun Install
         run: |
