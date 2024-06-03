@@ -39,7 +39,7 @@
     "npm-run-all2": "5.0.2",
     "prettier": "3.3.0",
     "stepci": "2.8.1",
-    "tsup": "8.0.2",
+    "tsup": "8.1.0",
     "typescript": "5.4.5",
     "unplugin-swc": "1.4.5",
     "vite": "5.2.12",
