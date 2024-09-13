@@ -1,4 +1,5 @@
 import startServer, { server } from "./server";
+import 'ajv/dist/core';
 
 startServer().catch(console.error);
 
